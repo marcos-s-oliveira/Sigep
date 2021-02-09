@@ -1,0 +1,33 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header >
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput type="email" placeholder="email" id="email"  formControlName="email" autofocus >
+            <mat-error *ngIf="addressForm.controls['email'].hasError('required')">
+              e-Mail <strong> obrigatório</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput type="password" placeholder="Senha" formControlName="password">
+            <mat-error *ngIf="addressForm.controls['password'].hasError('required')">
+              Digite uma <strong> Senha</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions style="padding-bottom: 24px;">
+      <a  color="accent" href="create-account" style="margin-right: 40%; margin-left: 2%;">Recuperar Senha</a>
+      <button mat-raised-button color="primary" type="submit"> <mat-icon>lock</mat-icon> Entrar</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

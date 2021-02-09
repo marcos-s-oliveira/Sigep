@@ -1,0 +1,29 @@
+<mat-toolbar color="primary" style="margin-bottom: 12px;">
+    <span><small>Sistema Integrado de Gestão Educacional - Prisma</small></span>
+</mat-toolbar>
+<mat-card>
+    <mat-card-header>
+        <mat-form-field appearance="fill" style="flex: 2">
+            <mat-label>Turma</mat-label>
+            <mat-select [(value)]="turma" [disabled]="turmaDisabled">
+                <mat-option *ngFor="let turma of turmas" value="{{turma}}"  (click)="onChangeTurma(turma)">{{turma.nome}} - Ensino {{turma.ensino}} - Turno {{turma.turno}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill" style="flex: 2">
+            <mat-label>Aula</mat-label>
+            <mat-select [(value)]="aula" [disabled]="aulaDisabled">
+                <mat-option *ngFor="let aula of aulas" value="{{aula}}" (click)="onChangeAula(aula)">{{aula.nome}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-card-header>
+</mat-card>
+<mat-card style="padding: 1% 5%;">
+    <mat-selection-list #presents>
+        <mat-list-option *ngFor="let aluno of alunos" (click)="registraPresenca(aluno)">{{aluno.nome}} {{aluno.sobrenome}}</mat-list-option>
+    </mat-selection-list>
+    
+<p style="flex:1">Alunos Presentes: {{presents.selectedOptions.selected.length}}</p>
+<button mat-raised-button color="primary" style="flex:1" [disabled]="submitDisabled" (click)="onSubmit()">
+    Finalizar
+</button>
+</mat-card>

@@ -1,0 +1,67 @@
+
+<div class="grid-container">
+  <h1 class="mat-h1">Início</h1>
+  <mat-grid-list cols="2">
+    <mat-grid-tile  [colspan]="2" [rowspan]="1">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+           Visão Geral
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <mat-grid-list cols="2" >
+            <mat-grid-tile  [colspan]="2" [rowspan]="1">
+              <mat-card style="margin-right: 10px;">
+                <mat-card-header>
+                  <mat-card-title>Alunos Matriculados</mat-card-title>
+                </mat-card-header>
+                <mat-card-content >
+                  <mat-icon color="primary" style="width: 56px; font-size: 56px;">person</mat-icon>
+                  <h1 >455</h1>
+                </mat-card-content>
+              </mat-card>
+              <mat-card style="margin-right: 10px;">
+                <mat-card-header>
+                  <mat-card-title>Reuniões Próximas</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                  <mat-icon style="width: 56px; color: springgreen; font-size: 56px;">business</mat-icon>
+                  <h1>0</h1>
+                </mat-card-content>
+              </mat-card>
+              <mat-card style="margin-right: 10px;">
+                <mat-card-header>
+                  <mat-card-title>Alertas Pendentes</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                  <mat-icon color="accent" style="width: 56px;  font-size: 56px;">info</mat-icon>
+                  <h1>1</h1>
+                </mat-card-content>
+              </mat-card>
+              </mat-grid-tile>
+              </mat-grid-list>
+          
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-grid-list cols="2">
+  <mat-grid-tile  [colspan]="2" [rowspan]="1">
+    <mat-card class="dashboard-card">
+      <mat-card-header>
+        <mat-card-title>
+          Faltas
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-subtitle>
+        Dados Insuficientes Para Gerar o Gráfico
+      </mat-card-subtitle>
+      <mat-card-content>
+        <canvas id="faltas"></canvas>
+
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+</div>
